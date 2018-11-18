@@ -1,5 +1,5 @@
 const images = document.getElementById('images');
-images.addEventListener('click', function(event) {
+images.addEventListener('click', (event) => {
   let img = event.target;
   console.log('I was clicked');
   // event.target.classList.toggle('image--favourite');
