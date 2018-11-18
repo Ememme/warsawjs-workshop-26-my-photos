@@ -1,6 +1,10 @@
+import image1 from './images/DSC05386.JPG';
+import image2 from './images/DSC05389.JPG';
+import image3 from './images/DSC05396.JPG';
+
 const imagesWrapper = document.getElementById('images');
 const favorites = document.getElementById('show-favourites');
-const imagePath = ['images/DSC05386.JPG', 'images/DSC05389.JPG', 'images/DSC05396.JPG'];
+const imagePath = [image1, image2, image3];
 
 
 class Image {
