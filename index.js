@@ -1,13 +1,12 @@
 const images = document.getElementById('images');
-images.addEventListener('click', (event) => {
-  let img = event.target;
-  console.log('I was clicked');
-  // event.target.classList.toggle('image--favourite');
-  if (img.classList.contains('image--favourite')) {
-    img.classList.remove('image--favourite');
-  } else {
-    img.classList.add('image--favourite');
-  }
+images.addEventListener('click', ({ target }) => {
+
+  target.classList.toggle('image--favourite');
+  // if (target.classList.contains('image--favourite')) {
+  //   target.classList.remove('image--favourite');
+  // } else {
+  //   target.classList.add('image--favourite');
+  // }
 });
 const imagePath = ['images/DSC05386.JPG', 'images/DSC05389.JPG', 'images/DSC05396.JPG'];
 
