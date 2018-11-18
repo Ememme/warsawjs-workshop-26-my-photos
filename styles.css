@@ -1,9 +1,10 @@
 img {
-    width: 300px;
-    height: 300px;
+  width: 300px;
+  height: 300px;
+  margin-left: 10px;
 }
 
 .image--favourite {
-    box-sizing: border-box;
-    border: 10px solid red;
+  box-sizing: border-box;
+  border: 10px solid red;
 }
