@@ -12,5 +12,6 @@ const imagePath = ['images/DSC05386.JPG', 'images/DSC05389.JPG', 'images/DSC0539
 imagePath.forEach((image) => {
   const newImage = document.createElement('img');
   newImage.setAttribute('src', image);
+  newImage.addEventListener('click', () => newImage.classList.add('image--favourite'));
   images.appendChild(newImage);
 });
