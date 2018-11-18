@@ -12,6 +12,7 @@ class Image {
     image.setAttribute('src', this.path);
     image.addEventListener('click', () => this.markOrUnmarkAsFavourite());
     images.appendChild(image);
+    // przypięcie do this
     this.imageElement = image;
   }
 
@@ -21,7 +22,9 @@ class Image {
   }
 }
 
-imagePath.forEach((image) => {
-  const newImage = new Image(image)
-  newImage.show();
-});
+// imagePath.forEach((image) => {
+//   const newImage = new Image(image);
+//   newImage.show();
+// });
+
+imagePath.map(x => new Image(x)).forEach(image => image.show());
