@@ -5,6 +5,8 @@ import Image from './image.js'
 
 const imagesWrapper = document.getElementById('images');
 const favorites = document.getElementById('show-favourites');
+const uploadButton = document.getElementById('file-input');
+
 const imagePath = [image1, image2, image3];
 
 
@@ -18,3 +20,18 @@ function filtered() {
 }
 
 favorites.addEventListener('click', () => filtered());
+uploadButton.onchange = () => {
+  // uploadButton.files > sprawdzi czy nie jest undefined po drodze
+    if (uploadButton.files && uploadButton.files[0]) {
+        const reader = new FileReader();
+        reader.onload = function (e) {
+            // dodajemy e.target.result
+        const newImg = new Image(e.target.result);
+        imagePath.push(newImg);
+        console.log(imagePath);
+        newImg.show();
+        };
+
+        reader.readAsDataURL(uploadButton.files[0]);
+    }
+};
