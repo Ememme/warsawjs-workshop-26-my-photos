@@ -35,3 +35,17 @@ uploadButton.onchange = () => {
         reader.readAsDataURL(uploadButton.files[0]);
     }
 };
+
+fetch('http://localhost:3000/photos')
+  .then(response => response.json())
+  .then((response) => {
+    console.log(response);
+      response
+      .map(img => new Image(img.url))
+      .forEach(img => img.show());
+      uploadButton.addEventListener('click', () => {
+        images
+        .filter(image => image.isFavorite())
+        .forEach(image => image.hide());
+    });
+ });
