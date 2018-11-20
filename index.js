@@ -22,7 +22,7 @@ function filtered() {
 favorites.addEventListener('click', () => filtered());
 uploadButton.addEventListener('click', () => {
     images
-        .filter(image => image.isFavorite())
+        .filter(image => image.isFavourite())
         .forEach(image => image.hide());
 
 });
