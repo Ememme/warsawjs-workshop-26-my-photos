@@ -20,6 +20,12 @@ function filtered() {
 }
 
 favorites.addEventListener('click', () => filtered());
+uploadButton.addEventListener('click', () => {
+    images
+        .filter(image => image.isFavorite())
+        .forEach(image => image.hide());
+
+});
 uploadButton.onchange = () => {
   // uploadButton.files > sprawdzi czy nie jest undefined po drodze
     if (uploadButton.files && uploadButton.files[0]) {
@@ -43,9 +49,4 @@ fetch('http://localhost:3000/photos')
       response
       .map(img => new Image(img.url))
       .forEach(img => img.show());
-      uploadButton.addEventListener('click', () => {
-        images
-        .filter(image => image.isFavorite())
-        .forEach(image => image.hide());
-    });
  });
